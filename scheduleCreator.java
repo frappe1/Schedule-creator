@@ -25,6 +25,7 @@ public class Main {
         sch[3][3] = datLecture;
 
         sch[1][2] = TApass;
+        sch[3][2] = TApass;
 
         sch[1][0] = misc;
         //sch[3][3] = misc;
@@ -119,6 +120,7 @@ public class Main {
         return;
     }
 
+    //This function is kind of broken ATM
     public static void FindPhysicsTime(Activity fExc, Activity fLec){
         for(int d = 0; d < 5; d++){
             for(int t = 0; t < 4; t++){
@@ -158,6 +160,13 @@ public class Main {
                     amount = 0;
                     break;
                 }
+            }
+        }
+        amount = 1;
+        for(int t = 0; t < 4 && amount > 0; t++){
+            if(sch[4][t] == null) {
+                sch[4][t] = prep;
+                amount--;
             }
         }
     }
